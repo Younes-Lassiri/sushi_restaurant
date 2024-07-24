@@ -296,76 +296,6 @@
     font-size: 12px;
     letter-spacing: 1px;
 }
-@media only screen and (max-width: 767px)
-{
-    .breadcrumb-section-one
-    {
-        width: 90%;
-        gap: 7px;
-        font-size: 14px;
-    }
-    .food-presentation-section
-    {
-        grid-template-columns: 1fr;
-        grid-gap: 30px;
-        padding: 100px 30px;
-    }
-    .food-presentation-section-left-side
-    {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 2.3fr 1fr;
-        border: none;
-    }
-    .food-presentation-section-left-side-four
-    {
-        grid-column: 1/4;
-        grid-row: 1/2;
-        height: 60vh;
-        border: 1px solid #B58C67;
-    }
-    .food-presentation-section-left-side-one
-    {
-        grid-column: 1/2;
-        grid-row: 2/3;
-        border: 1px solid #B58C67;
-        margin-top: 17px;
-        border-right: none;
-    }
-    .food-presentation-section-left-side-two
-    {
-        grid-column: 2/3;
-        grid-row: 2/3;
-        border: 1px solid #B58C67;
-        margin-top: 17px;
-        
-    }
-    .food-presentation-section-left-side-three
-    {
-        grid-column: 3/4;
-        border: 1px solid #B58C67;
-        margin-top: 17px;
-        grid-row: 2/3;
-        border-left: none;
-    }
-    .food-presentation-section-right-side-title
-    {
-        gap: 15px;
-    }
-    .food-presentation-section-right-side-title .name
-    {
-        font-size: 27px;
-    }
-    .food-presentation-section-right-side-title .price
-    {
-        font-size: 14px;
-    }
-    .food-presentation-section-right-side-desc
-    {
-        font-size: 10px;
-        line-height: 1.4rem;
-    }
-    
-}
 .product-user-infos
 {
     width: 100%;
@@ -806,4 +736,105 @@
 .reviews-section-product-three-three-two a:hover .a-after
 {
     width: 96%;
+}
+
+@media only screen and (max-width: 767px)
+{
+    .breadcrumb-section-one
+    {
+        width: 90%;
+        gap: 7px;
+        font-size: 14px;
+    }
+    .food-presentation-section
+    {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+        padding: 100px 30px;
+    }
+    .food-presentation-section-left-side
+    {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 2.3fr 1fr;
+        border: none;
+    }
+    .food-presentation-section-left-side-four
+    {
+        grid-column: 1/4;
+        grid-row: 1/2;
+        height: 60vh;
+        border: 1px solid #B58C67;
+    }
+    .food-presentation-section-left-side-one
+    {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        border: 1px solid #B58C67;
+        margin-top: 17px;
+        border-right: none;
+    }
+    .food-presentation-section-left-side-two
+    {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        border: 1px solid #B58C67;
+        margin-top: 17px;
+        
+    }
+    .food-presentation-section-left-side-three
+    {
+        grid-column: 3/4;
+        border: 1px solid #B58C67;
+        margin-top: 17px;
+        grid-row: 2/3;
+        border-left: none;
+    }
+    .food-presentation-section-right-side-title
+    {
+        gap: 15px;
+    }
+    .food-presentation-section-right-side-title .name
+    {
+        font-size: 27px;
+    }
+    .food-presentation-section-right-side-title .price
+    {
+        font-size: 14px;
+    }
+    .food-presentation-section-right-side-desc
+    {
+        font-size: 10px;
+        line-height: 1.4rem;
+    }
+    .product-user-infos-navbar
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+    .product-user-infos
+    {
+        padding: 0 30px;
+    }
+    .description-section-product
+    {
+        grid-template-columns: 1fr;
+    }
+    .infos-section-product-one h2
+    {
+        font-size: 11px;
+    }
+    .infos-section-product-two h2
+    {
+        font-size: 11px;
+    }
+    .reviews-section-product-three-two
+    {
+        grid-template-columns: 1fr;
+    }
+    .reviews-section-product-three-three
+    {
+        margin-top: 100px;
+    }
 }
