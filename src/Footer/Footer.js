@@ -1,9 +1,10 @@
 import React from 'react';
 import './Footer.css';
 import fidalgo from '../sushi_project_images/sushi_footer_logo.png';
-function Footer() {
+import fidalgodark from '../sushi_project_images/footer_bg-dark.png';
+function Footer(props) {
     return(
-        <div className='footer-section'>
+        <div className={props.dark? 'footer-section-dark' : 'footer-section'}>
             <div className='footer-section-one'>
                 <span>PINTEREST</span>
                 <div className="footer-square"></div>
@@ -12,7 +13,7 @@ function Footer() {
                 <span>INSTAGRAM</span>
             </div>
             <div className='footer-section-two'>
-                <img src={fidalgo} alt='fidalgo'/>
+                <img src={props.dark? fidalgodark : fidalgo} alt='fidalgo'/>
             </div>
             <div className='footer-section-three'>
                 <span>© 2024 YOUNES LASSIRI, ALL RIGHTS RESERVED</span>

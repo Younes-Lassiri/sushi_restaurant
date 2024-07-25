@@ -16,7 +16,9 @@ function Navbar() {
                 </div>
             </div>
             <div className='navbar-section-detail-two'>
-                <div className='navbar-section-detail-two-one'><img src={navlogo} alt='nav-logo'/></div>
+                <div className='navbar-section-detail-two-one'>
+                    <Link to='/'><img src={navlogo} alt='nav-logo'/></Link>
+                </div>
                 <div className='navbar-section-detail-two-two'>
                     <ul>
                         <li><Link to='/'>home</Link></li>

@@ -3,15 +3,47 @@ import Landing from "./Landing/Landing";
 import Order from "./Order/Order";
 import Collection from './Collection/Collection';
 import Contact from './Contact/Contact';
+import { Link as ScrollLink } from 'react-scroll';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Video from "./Video/Video";
 import Chef from "./Chef/Chef";
 import Plat from "./Plat/Plat";
 import Footer from "./Footer/Footer";
 import Detail from "./Detail/Detail";
+import { useEffect, useState } from "react";
 function App() {
+  const [showToTop, setShowToTop] = useState(false);
+  useEffect(() => {
+    console.log(window.pageYOffset / 10);
+    const handleScroll = () => {
+      if (window.pageYOffset > 700) {
+        setShowToTop(true);
+      } else {
+        setShowToTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [window.pageYOffset]);
   return (
     <BrowserRouter>
+      {showToTop && (
+        <div className='toTop'>
+        <div className="a-before"></div>
+        <div className="a-after"></div>
+        <div className="a-before-one"></div>
+        <div className="a-after-two"></div>
+        <div className="a-before-three"></div>
+        <div className="a-after-four"></div>
+          <ScrollLink to="top" smooth={true} duration={500}>
+            <span className='span'>top</span>
+          </ScrollLink>
+        </div>
+      )}
       <Routes>
         <Route path="/" element={
           (

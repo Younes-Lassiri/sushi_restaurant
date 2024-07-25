@@ -1,9 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Detail.css';
+import Footer from '../Footer/Footer';
+import { FaStar } from "react-icons/fa";
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 function Detail() {
+    const [currentValue, setCurrentValue] = useState(0);
+    const [hoverValue, setHoverValue] = useState(undefined);
+    const handleClick = value => {
+        setCurrentValue(value)
+      };
+      const handleMouseLeave = () => {
+        setHoverValue(undefined)
+      };    
+      const handleMouseOver = newHoverValue => {
+        setHoverValue(newHoverValue)
+      };
+    const stars = Array(5).fill(0)
+        const styles = {
+          stars: {
+            display: "flex",
+            flexDirection: "row",
+            padding:'15px 0'
+          }
+        
+        };
+        const colors = {
+          orange: "#bf402e",
+          grey: "#a9a9a9"
+          
+      };
     const [terms, setTerms] = useState(false);
     const [nav, setNav] = useState('description');
     const dispatch = useDispatch()
@@ -67,6 +94,7 @@ function Detail() {
       };
       function reviews()
       {
+        
         return(
             <div className='reviews-section-product'>
                 <div className='reviews-section-product-one'>
@@ -74,13 +102,35 @@ function Detail() {
                     <span>There are no reviews yet.</span>
                 </div>
                 <div className='reviews-section-product-two'>
-                    <span className='spanExept' >BE THE FIRST TO REVIEW {mainfood.name}</span>
-                    <span>Your email address will not be published. Required fields are marked *</span>
-                </div>
-                <div className='reviews-section-product-three'>
+                    <div className='reviews-section-product-two-added'>
+                        <span className='spanExept' >BE THE FIRST TO REVIEW {mainfood.name}</span>
+                        <span>Your email address will not be published. Required fields are marked *</span>
+                    </div>
                     <div className='reviews-section-product-three-one'>
                         <span>Your Rating *</span>
-                        <textarea placeholder='Your Review *' cols={45} rows='10'></textarea>
+                        <div style={styles.stars}>
+                            {stars.map((_, index) => {
+                            return (
+                                <FaStar
+                                key={index}
+                                size={18}
+                                onClick={() => handleClick(index + 1)}
+                                onMouseOver={() => handleMouseOver(index + 1)}
+                                onMouseLeave={handleMouseLeave}
+                                color={(hoverValue || currentValue) > index ? colors.orange : colors.grey}
+                                style={{
+                                    marginRight: 7,
+                                    cursor: "pointer"
+                                }}
+                                />
+                            )
+                            })}
+                        </div>
+                    </div>
+                </div>
+                <div className='reviews-section-product-three'>
+                    <div className='reviews-section-product-three-texarea'>
+                        <textarea cols='45' rows='8' placeholder='Your Review *'></textarea>
                     </div>
                     <div className='reviews-section-product-three-two'>
                         <input type='text' placeholder='Your Name *'/>
@@ -88,7 +138,9 @@ function Detail() {
                     </div>
                     <div className='reviews-section-product-three-three'>
                         <div className='reviews-section-product-three-three-one'>
+                            <div className='ensure-display-flex'>
                             <div onClick={() => setTerms(!terms)} className={terms? 'reviews-section-product-three-three-one-check-terms' : 'reviews-section-product-three-three-one-check'}></div>
+                            </div>
                             <span className='reviews-section-product-three-three-check-span'>Save my name, email, and website in this browser for the next time I comment.</span>
                         </div>
                         <div className='reviews-section-product-three-three-two'>
@@ -188,6 +240,66 @@ function Detail() {
                     {showNavContent()}
                 </div>
             </div>
+                <div className='related-title-products'>related products</div>
+            <div className='related-products'>
+            {
+                foods.slice(0, 3).map((food,i) => {
+                    return(
+                        <Link to={`/product/${food.name.toLowerCase().split(' ').join('-')}`} style={{textDecoration: 'none'}}>
+                            
+                        <div className={food.sale === true? 'collection-section-two-one-sale' : 'collection-section-two-one'}>
+                            <div className='collection-section-two-one-one'>
+                                <div className='collection-section-two-one-one-left-side'>{food.name}</div>
+                                <div className='collection-section-two-one-one-prices'>
+                                {
+                                    food.promo === true? (
+                                        <div className='collection-section-two-one-one-promo-side'>${food.oldPrice.toFixed(2)}</div>
+                                    ) : null
+                                }
+                                <div className='collection-section-two-one-one-right-side'>${food.price.toFixed(2)}</div>
+                                </div>
+                            </div>
+                            <div className='collection-section-two-one-two'>
+                                <a href=''>add to cart</a>
+                            </div>
+                            <div className={food.id === 4? `collection-section-two-one-three-${food.id}` :'collection-section-two-one-three'}>
+                                <img src={food.image} alt={food.name}/>
+                            </div>
+                            <div className='collection-section-two-one-four'>
+                                {food.description}
+                            </div>
+                        </div>
+                        </Link>
+                    )
+                })
+            }
+            </div>
+            <div className='details-products-contact-section'>
+            <div className="contact-section-two">
+                <div className="contact-section-two-one">
+                    <div className="contact-section-two-one-title">CONTACT US</div>
+                    <div className="contact-section-two-one-para">
+                        <span>T. +12 344 0567899</span>
+                        <span>M. fidalgo@example.com</span>
+                    </div>
+                </div>
+                <div className="contact-section-two-one">
+                    <div className="contact-section-two-one-title">ADDRESS</div>
+                    <div className="contact-section-two-one-para">
+                        <span>Piazza Della Signoria, 12</span>
+                        <span>21562 . Firenze . Italy</span>
+                    </div>
+                </div>
+                <div className="contact-section-two-one-ex">
+                    <div className="contact-section-two-one-title">OPENING HOURS</div>
+                    <div className="contact-section-two-one-para">
+                        <span>Everyday : From 12.30 To 23.00</span>
+                        <span>Kitchen Closes At 22.00</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <Footer dark={true}/>
         </div>
     )
 }

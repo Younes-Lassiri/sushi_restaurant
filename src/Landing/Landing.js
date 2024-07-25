@@ -48,39 +48,10 @@ export default function Landing() {
     }
   }
   const [clicked, setClicked] = useState(false);
-  const [showToTop, setShowToTop] = useState(false);
 
-  useEffect(() => {
-    console.log(window.pageYOffset / 10);
-    const handleScroll = () => {
-      if (window.pageYOffset > 700) {
-        setShowToTop(true);
-      } else {
-        setShowToTop(false);
-      }
-    };
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [window.pageYOffset]);
   return (
-    <div className='landing-section' id='top'>
-      {showToTop && (
-        <div className='toTop'>
-        <div className="a-before"></div>
-        <div className="a-after"></div>
-        <div className="a-before-one"></div>
-        <div className="a-after-two"></div>
-        <div className="a-before-three"></div>
-        <div className="a-after-four"></div>
-          <ScrollLink to="top" smooth={true} duration={500}>
-            <span className='span'>top</span>
-          </ScrollLink>
-        </div>
-      )}
+    <div className='landing-section'>
 
       {clicked && <div className='navabar-clicked'>
         <div className='landing-section-col-1-clicked'>
