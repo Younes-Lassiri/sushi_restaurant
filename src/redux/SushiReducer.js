@@ -39,7 +39,7 @@ const initialState = {
             quantite: 1,
             name: 'THAIL ROLL',
             description: 'Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Ac turpis egestas ma',
-            image: foodthree,
+            image: foodseven,
             price: 38.00,
             sale: false,
             promo: false

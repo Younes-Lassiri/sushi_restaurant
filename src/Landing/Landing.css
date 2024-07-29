@@ -13,7 +13,7 @@ html{
 
 .navabar-clicked
 {
-    z-index: 10;
+    z-index: 1000;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,7 +26,40 @@ html{
     animation: bgchanged .4s alternate both;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    overflow-y: hidden;
+}
+.scrolling-navabr
+{
+    z-index: 10;
+    width: 100vw;
+    height: 90px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.8;
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+.clicked_is_true {
+    overflow: hidden;
+}
+
+.scrolling-navabr-one
+{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.scrolling-navabr-one img
+{
+    z-index: 12;
+    width: 90%;
+    height: 73%;
 }
 @keyframes bgchanged{
     from{

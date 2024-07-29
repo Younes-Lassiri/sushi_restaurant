@@ -48,11 +48,37 @@ export default function Landing() {
     }
   }
   const [clicked, setClicked] = useState(false);
+  
+  const [shownav, setShownav] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 300) {
+        setShownav(true);
+      } else {
+        setShownav(false);
+      }
+    };
 
+    window.addEventListener('scroll', handleScroll);
 
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [window.pageYOffset]);
+  
   return (
     <div className='landing-section'>
-
+      {shownav && <div className='scrolling-navabr'>
+        <div className='scrolling-navabr-one'>
+          <img src={logo} alt='logo'/>
+        </div>
+        <div className='landing-section-col-2-nav'>
+              <div className='landing-section-col-2-nav-one'>
+                <div className='landing-section-col-2-nav-one-menu'></div>
+                <div className='landing-section-col-2-nav-one-humb' onClick={() => setClicked(!clicked)}><span className='landing-section-col-2-nav-one-humb-one'></span><span className='landing-section-col-2-nav-one-humb-two'></span></div>
+              </div>
+          </div>
+        </div>}
       {clicked && <div className='navabar-clicked'>
         <div className='landing-section-col-1-clicked'>
             <div className='landing-section-col-1-logo'>

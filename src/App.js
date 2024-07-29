@@ -14,7 +14,6 @@ import { useEffect, useState } from "react";
 function App() {
   const [showToTop, setShowToTop] = useState(false);
   useEffect(() => {
-    console.log(window.pageYOffset / 10);
     const handleScroll = () => {
       if (window.pageYOffset > 700) {
         setShowToTop(true);
