@@ -89,8 +89,8 @@ export default function Landing() {
             </div>
             <div className='landing-section-col-1-highlight-clicked'>
               <ul>
-                <li><a className='nav-active'>home</a></li>
-                <li><Link to='/menu-small-images'>our menu</Link></li>
+                <li><Link to='/' className='nav-active'>home</Link></li>
+                <li><Link to='/menu-small-images'>menu</Link></li>
                 <li><a href='#'>pages</a></li>
                 <li><a href='#'>landing</a></li>
               </ul>
