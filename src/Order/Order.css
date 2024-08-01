@@ -137,9 +137,16 @@
     z-index: 100;
     border: 1px solid rgba(255,255,255,.4);
     border-top: none;
-    scrollbar-width: thin;
-    scrollbar-color: transparent transparent;
-    scrollbar-track-color: transparent;
+}
+.order-section-center-side-inp-one-two::-webkit-scrollbar {
+    display: none;
+}
+.order-section-center-side-inp-one-two {
+    scrollbar-width: none;
+}
+
+.order-section-center-side-inp-one-two {
+    -ms-overflow-style: none;
 }
 .order-section-center-side-inp-one-two ul
 {

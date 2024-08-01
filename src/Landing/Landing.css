@@ -29,7 +29,7 @@ html{
 }
 .scrolling-navabr
 {
-    z-index: 10;
+    z-index: 1000;
     width: 100vw;
     height: 90px;
     background-color: black;
@@ -572,8 +572,6 @@ html{
     top: 50%;
     transform: translate(-50%,-50%) rotate(-45deg);
 }
-
-
 @media only screen and (max-width: 767px)
 {
     .landing-section-col-2-menu-slider-clicked
@@ -683,6 +681,11 @@ html{
         height: 100%;
     }
     .landing-section-col-1-logo img
+    {
+        width: 130px;
+        height: 45px;
+    }
+    .scrolling-navabr-one img
     {
         width: 130px;
         height: 45px;

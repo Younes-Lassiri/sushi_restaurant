@@ -11,6 +11,7 @@ import Plat from "./Plat/Plat";
 import Footer from "./Footer/Footer";
 import Detail from "./Detail/Detail";
 import { useEffect, useState } from "react";
+import Menu from "./Menu/Menu";
 function App() {
   const [showToTop, setShowToTop] = useState(false);
   useEffect(() => {
@@ -60,6 +61,7 @@ function App() {
           )
         }/>
         <Route path="/product/:name" element={<Detail/>}/>
+        <Route path="/menu-small-images/" element={<Menu/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -6,6 +6,7 @@ import foodone from '../sushi_project_images/food_one.png';
 import foodtwo from '../sushi_project_images/slider_two.jpg';
 import foodthree from '../sushi_project_images/slider_three.jpg';
 import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom';
 function isMobileDevice() {
   return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/.test(navigator.userAgent);
 }
@@ -65,7 +66,9 @@ export default function Landing() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [window.pageYOffset]);
-  
+  function setCli(){
+    setClicked(!clicked);
+  }
   return (
     <div className='landing-section'>
       {shownav && <div className='scrolling-navabr'>
@@ -75,7 +78,7 @@ export default function Landing() {
         <div className='landing-section-col-2-nav'>
               <div className='landing-section-col-2-nav-one'>
                 <div className='landing-section-col-2-nav-one-menu'></div>
-                <div className='landing-section-col-2-nav-one-humb' onClick={() => setClicked(!clicked)}><span className='landing-section-col-2-nav-one-humb-one'></span><span className='landing-section-col-2-nav-one-humb-two'></span></div>
+                <div className='landing-section-col-2-nav-one-humb' onClick={setCli}><span className='landing-section-col-2-nav-one-humb-one'></span><span className='landing-section-col-2-nav-one-humb-two'></span></div>
               </div>
           </div>
         </div>}
@@ -87,7 +90,7 @@ export default function Landing() {
             <div className='landing-section-col-1-highlight-clicked'>
               <ul>
                 <li><a className='nav-active'>home</a></li>
-                <li><a href='#'>our menu</a></li>
+                <li><Link to='/menu-small-images'>our menu</Link></li>
                 <li><a href='#'>pages</a></li>
                 <li><a href='#'>landing</a></li>
               </ul>
