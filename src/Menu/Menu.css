@@ -722,6 +722,10 @@
     position: relative;
     padding: 0 5px;
 }
+.menu-section-all-divs
+{
+    overflow-x: hidden;
+}
 .food-menu-main-courses-one h1::after
 {
     content: '';

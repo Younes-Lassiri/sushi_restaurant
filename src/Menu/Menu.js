@@ -214,7 +214,7 @@ function Menu() {;
           ]
       };
     return(
-        <div>
+        <div className='menu-section-all-divs'>
             <div className='menu-food-section'>
             <div className='menu-food-section-one'>
                 <div className='menu-food-section-one-left'>
