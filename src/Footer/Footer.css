@@ -1,31 +1,70 @@
 .footer-section
 {
     width: 100%;
-    height: 80px;
     display: grid;
     grid-template-columns: 40% 20% 40%;
     background-color: #0E0D0A;
-    padding: 0 70px;
+    padding: 10px 100px;
 }
 .footer-section-dark
 {
     width: 100%;
-    height: 80px;
     display: grid;
     grid-template-columns: 40% 20% 40%;
     background-color: #000000;
-    padding: 0 70px;
+    padding: 10px 100px;
 }
-.footer-section-one
+.footer-section-left-side
 {
     width: 100%;
-    border-top: 1px solid rgba(255,255,255,.3);
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    justify-content: start;
+    position: relative;
 }
-.footer-section-one span
+.footer-section-left-side::before
+{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255,255,255,.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.footer-section-right-side
+{
+    width: 100%;
+    position: relative;
+}
+.footer-section-right-side::before
+{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255,255,255,.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.footer-section-center-side
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.footer-section-center-side img
+{
+    width: 63%;
+    transform: translateY(-50%);
+}
+.footer-section-bottom
+{
+    width: 100%;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.footer-section-bottom-left span
 {
     position: relative;
     transition: .5s;
@@ -38,7 +77,8 @@
     letter-spacing: 3px;
     line-height: 1.5rem;
 }
-.footer-section-one span::before
+
+.footer-section-bottom-left span::before
 {
     content: '';
     width: 0;
@@ -49,63 +89,19 @@
     bottom: 0;
     transition: .8s;
 }
-.footer-section-one span:hover::before
+.footer-section-bottom-left span:hover::before
 {
     width: 100%;
 }
-.footer-section-three
+.footer-section-bottom-left
 {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: end;
-    border-top: 1px solid rgba(255,255,255,.3);
-}
-.footer-section-three span
-{
-    transition: .7s;
-    font-family: Jost, sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    color: #cecece;
-    font-size: 10px;
-    letter-spacing: 3px;
-    line-height: 1.5rem;
-    cursor: pointer;
-}
-.footer-section-three span:hover
-{
-    color: #fff;
-}
-.footer-section-two
-{
-    width: 100%;
-    display: flex;
-    align-items: start;
-    justify-content: center;
-}
-.footer-section-two img
-{
-    width: 60%;
-    transform: translateY(-50%);
+    justify-content: start;
+    gap: 10px;
 }
 
-@media only screen and (max-width: 767px)
-{
-    .footer-section-three span
-    {
-        display: none;
-    }
-    .footer-section-two img
-    {
-        width: 90%;
-        transform: translateY(-50%);
-    }
-    .footer-section-one
-    {
-        padding-left: 30px;
-    }
-}
 .footer-square
 {
     position: relative;
@@ -123,4 +119,57 @@
     left: 50%;
     top: 50%;
     transform:  translate(-50%, -50%) scale(0.7);
+}
+
+.footer-section-bottom-right
+{
+    width: 100%;
+    transition: .7s;
+    font-family: Jost, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #cecece;
+    font-size: 10px;
+    letter-spacing: 3px;
+    line-height: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.footer-section-bottom-right:hover
+{
+    color: #fff;
+}
+@media only screen and (max-width: 767px)
+{
+    .footer-section-dark
+    {
+        padding: 0 40px;
+    }
+    .footer-section
+    {
+        padding: 0 40px;
+    }
+    .footer-section-bottom
+    {
+        grid-template-columns: 1fr;
+    }
+    .footer-section-bottom-left
+    {
+        justify-content: center;
+        padding: 15px 0;
+    }
+    .footer-section-bottom-right
+    {
+        text-align: center;
+        justify-content: center;
+        padding: 5px 0;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .footer-section-center-side img
+    {
+        width: 90%;
+    }
 }

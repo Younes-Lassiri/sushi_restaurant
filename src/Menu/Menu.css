@@ -724,7 +724,7 @@
 }
 .menu-section-all-divs
 {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .food-menu-main-courses-one h1::after
 {
