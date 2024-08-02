@@ -49,7 +49,7 @@ function App() {
       <Routes>
         <Route path="/" element={
           (
-            <div>
+            <div style={{overflow: 'hidden'}}>
               <Landing/>
               <Explore/>
               <Order/>
@@ -70,5 +70,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
