@@ -12,6 +12,7 @@ import Footer from "./Footer/Footer";
 import Detail from "./Detail/Detail";
 import { useEffect, useState } from "react";
 import Menu from "./Menu/Menu";
+import Review from "./Review/Review";
 function App() {
   const [showToTop, setShowToTop] = useState(false);
   useEffect(() => {
@@ -55,6 +56,7 @@ function App() {
               <Video/>
               <Chef/>
               <Plat/>
+              <Review/>
               <Contact/>
               <Footer/>
             </div>
