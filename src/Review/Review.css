@@ -199,3 +199,7 @@
         height: 70vh;
     }
 }
+::selection {
+    background-color: #B58C67;
+    color: #fff;
+}

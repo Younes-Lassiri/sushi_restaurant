@@ -13,6 +13,7 @@ import Detail from "./Detail/Detail";
 import { useEffect, useState } from "react";
 import Menu from "./Menu/Menu";
 import Review from "./Review/Review";
+import Cart from "./Cart/Cart";
 function App() {
   const [showToTop, setShowToTop] = useState(false);
   useEffect(() => {
@@ -58,12 +59,13 @@ function App() {
               <Plat/>
               <Review/>
               <Contact/>
-              <Footer/>
+              <Footer theme=''/>
             </div>
           )
         }/>
         <Route path="/product/:name" element={<Detail/>}/>
-        <Route path="/menu-small-images/" element={<Menu/>}/>
+        <Route path="/menu-small-images" element={<Menu/>}/>
+        <Route path="/cart" element={<Cart/>}/>
       </Routes>
     </BrowserRouter>
   );

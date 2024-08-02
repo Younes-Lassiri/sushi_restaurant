@@ -6,12 +6,28 @@
     background-color: #0E0D0A;
     padding: 10px 100px;
 }
-.footer-section-dark
+.footer-sectiondark
 {
     width: 100%;
     display: grid;
     grid-template-columns: 40% 20% 40%;
     background-color: #000000;
+    padding: 10px 100px;
+}
+.footer-sectionmenu
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    background-color: #0D1E2B;
+    padding: 10px 100px;
+}
+.footer-sectioncart
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    background-color: #16261A;
     padding: 10px 100px;
 }
 .footer-section-left-side
@@ -144,6 +160,14 @@
 @media only screen and (max-width: 767px)
 {
     .footer-section-dark
+    {
+        padding: 0 40px;
+    }
+    .footer-sectionmenu
+    {
+        padding: 0 40px;
+    }
+    .footer-sectioncart
     {
         padding: 0 40px;
     }

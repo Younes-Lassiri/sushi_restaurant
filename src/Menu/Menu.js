@@ -534,7 +534,7 @@ function Menu() {;
                 </div>
             </div>
        </div>
-       <Footer menu={true}/>
+       <Footer theme='menu'/>
         </div>
     )
 }

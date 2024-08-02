@@ -299,7 +299,7 @@ function Detail() {
                 </div>
             </div>
             </div>
-            <Footer dark={true}/>
+            <Footer theme='dark'/>
         </div>
     )
 }

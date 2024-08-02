@@ -6,6 +6,15 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
 }
+.navbar-section-detail-cart
+{
+    width: 100%;
+    background-color: #1A2D1F;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding: 20px 0;
+}
 .navbar-section-detail-one
 {
     width: 97%;
@@ -81,6 +90,22 @@
     font-size: 12px;
     letter-spacing: 2px;
     font-weight: 400;
+    position: relative;
+}
+.navbar-section-detail-two-two ul li a::after
+{
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: #B58C67;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: .4s;
+}
+.navbar-section-detail-two-two ul li a:hover::after
+{
+    width: 100%;
 }
 .navbar-section-detail-two-three
 {
@@ -129,6 +154,10 @@
 }
 @media only screen and (max-width: 767px)
 {
+    .navbar-section-detail-cart
+    {
+        padding: 15px;
+    }
     .navbar-section-detail-two-two
     {
         display: none;
