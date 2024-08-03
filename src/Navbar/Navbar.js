@@ -7,10 +7,22 @@ function isMobileDevice() {
     return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/.test(navigator.userAgent);
   }
 function Navbar(props) {
-    const [isMobile, setIsMobile] = useState(0);
-  useEffect(() =>  {
-    setIsMobile(isMobileDevice() ? 1 : 0);
-  },[])
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+    useEffect(() => {
+        // Function to handle viewport resize
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 767);
+        };
+
+        // Add event listener for viewport resize
+        window.addEventListener('resize', handleResize);
+
+        // Call handleResize to set initial state
+        handleResize();
+
+        // Cleanup event listener on component unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     const cart = useSelector((state) => state.cart);
     const cartlength = useSelector(state => state.cart);
     const dispatch = useDispatch();
@@ -45,7 +57,7 @@ function Navbar(props) {
                         {props.cart? null: (
                         <Link to='/cart' style={{textDecoration: 'none',color: '#fff'}}><span>cart ({cartlength.length})</span></Link>
                     )}
-                    {props.cart && isMobile === 1? null: (
+                    {!props.cart && !isMobile && (
                         
                     <div className='cart-overview'>
                     {cart.length > 0? (
