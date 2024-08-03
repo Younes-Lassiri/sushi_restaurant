@@ -46,26 +46,6 @@ const initialState = {
           }
     ],
     cart: [
-      {
-        id: 1,
-        quantite: 1,
-        name: 'TERIYAKI ROLL',
-        description: 'Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Ac turpis egestas ma',
-        image: foodone,
-        price: 35.00,
-        promo: false
-      },
-      {
-        id: 2,
-        quantite: 1,
-        name: 'FUJIZAN',
-        description: 'Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur. Ac turpis egestas ma',
-        image: foodtwo,
-        price: 27.00,
-        promo: true,
-        oldPrice: 31.00,
-        sale: true,
-      }
     ],
     trash:[]
 }

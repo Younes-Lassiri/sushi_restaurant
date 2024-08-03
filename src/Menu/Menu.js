@@ -18,6 +18,7 @@ import sliderthree from '../sushi_project_images/sliderthree.jpg';
 import sliderfive from '../sushi_project_images/sliderfive.jpg';
 import slidersix from '../sushi_project_images/slidersix.jpg';
 import Footer from '../Footer/Footer';
+import { Link } from 'react-router-dom';
 function Menu() {;
     const [tclicked, setTclicked] = useState(false);
     function timefunction(e)
@@ -226,7 +227,7 @@ function Menu() {;
                         <li><a href='#'>landing</a></li>
                     </div>
                 </div>
-                <div className='menu-food-section-one-center'><img src={menulogo}/></div>
+                <div className='menu-food-section-one-center'><Link to='/'><img src={menulogo}/></Link></div>
                 <div className='menu-food-section-one-right'>
                     <a href="#">
                         <div className="a-before"></div>

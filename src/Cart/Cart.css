@@ -517,6 +517,11 @@
         width: 100%;
         justify-content: start;
     }
+    .cart-cupon-code-one-submit a
+    {
+        width: 100%;
+        font-size: 11px;
+    }
     .contact-section-two-cart
     {
         grid-template-columns: 1fr;
