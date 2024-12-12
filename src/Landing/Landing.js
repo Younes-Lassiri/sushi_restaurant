@@ -63,7 +63,7 @@ export default function Landing() {
   const [shownav, setShownav] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 300) {
+      if (window.pageYOffset > 600) {
         setShownav(true);
       } else {
         setShownav(false);

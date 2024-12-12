@@ -48,6 +48,8 @@ function Meet() {
     }, [window.pageYOffset]);
     return(
         <div className='meet-chef-section-all'>
+      <div className="contactus-section-before"></div>
+      <div className="contactus-section-after"></div>
             {shownav && <div className='scrolling-navabr'>
           <div className='menu-food-section-oneShownav'>
                 <div className='menu-food-section-one-left'>

@@ -6,6 +6,56 @@
     position: relative;
     z-index: 2;
 }
+.meet-chef-section-all .contactus-section-before
+{
+    z-index: -1;
+    width: 1px;
+    height: calc(100% - 50px);
+    background-color: #abb8c336;
+    position: absolute;
+    left: 33.33%;
+    top: 0;
+    bottom: 0;
+}
+.meet-chef-section-all .contactus-section-before::before
+{
+    content: '';
+    width: 100%;
+    height: 70px;
+    background-color: #abb8c357;
+    position: absolute;
+    top: 0;
+    animation: beforeUpDown 6s infinite alternate-reverse;
+}
+@keyframes beforeUpDown{
+    from{
+        top: 0;
+    }
+    from{
+        top: calc(100% - 100px);
+    }
+}
+.meet-chef-section-all .contactus-section-after::before
+{
+    content: '';
+    width: 100%;
+    height: 70px;
+    background-color: #abb8c357;
+    position: absolute;
+    top: 0;
+    animation: beforeUpDown 6s infinite alternate-reverse;
+}
+.meet-chef-section-all .contactus-section-after
+{
+    z-index: -1;
+    width: 1px;
+    height: calc(100% - 50px);
+    background-color: #abb8c336;
+    position: absolute;
+    right: 33.33%;
+    top: 0;
+    bottom: 0;
+}
 .menu-food-section-meet
 {
     width: 100%;
@@ -213,6 +263,15 @@
     {
         width: 70%;
         left: 0;
+    }
+    
+    .meet-chef-section-all .contactus-section-before
+    {
+        display: none;
+    }
+    .meet-chef-section-all .contactus-section-after
+    {
+        display: none;
     }
     .meet-chef-section-all-two
     {

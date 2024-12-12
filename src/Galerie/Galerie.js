@@ -52,6 +52,15 @@ function Galerie() {
         element.classList.add('home-section-hide-up');
     }
     }
+    useEffect(() => {
+        const body = document.body;
+        if(clicked)
+        {
+          body.classList.add('bodyStuck')
+        }else{
+          body.classList.remove('bodyStuck')
+        }
+      }, [clicked]);
     return(
         <div className='galerie-section-main'>
             {
