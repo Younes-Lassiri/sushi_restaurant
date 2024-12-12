@@ -111,9 +111,10 @@ export default function Landing() {
         bottom: 0,
         width: `100%`,
         height: '100vh',
-        background: 'rgba(0,0,0,.2)',
+        background: 'rgba(0,0,0,.3)',
         opacity: `${scrollProgress}`,
         zIndex: 9999,
+        pointerEvents: 'none',
         boxShadow: '0px 3px 5px 0px rgb(0 0 0 / 10%)'
       }}
       ></div>
@@ -139,6 +140,7 @@ export default function Landing() {
                 <li><Link to='/menu-small-images'>menu</Link></li>
                 <li><Link to="/pages/about-us">About</Link></li>
                 <li><Link to="/pages/contact-us">Contact</Link></li>
+                <li><Link to="/pages/galerie">Galerie</Link></li>
                 <li><Link to="/pages/meet-the-chef">Meet The Chef</Link></li>
               </ul>
             </div>

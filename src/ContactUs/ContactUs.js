@@ -15,9 +15,14 @@ import Footer from "../Footer/Footer";
 function ContactUs() {
   const [clicked, setClicked] = useState(false);
   useEffect(() => {
-      const body = document.body;
+    const body = document.body;
+    if(clicked)
+    {
+      body.classList.add('bodyStuck')
+    }else{
       body.classList.remove('bodyStuck')
-  },[]);
+    }
+  }, [clicked]);
   var settings = {
     dots: false,
     infinite: true,
