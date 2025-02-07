@@ -18,6 +18,9 @@ import AboutUs from "./AboutUs/AboutUs";
 import ContactUs from "./ContactUs/ContactUs";
 import Galerie from './Galerie/Galerie';
 import Meet from "./Meet/Meet";
+import AdminPanel from "./AdminPanel/AdminPanel";
+import Signup from "./Signup/Signup";
+import Login from "./Login/Login";
 function App() {
   const [showToTop, setShowToTop] = useState(false);
   useEffect(() => {
@@ -74,6 +77,9 @@ function App() {
         <Route path="/pages/contact-us" element={<ContactUs/>}/>
         <Route path="/pages/meet-the-chef" element={<Meet/>}/>
         <Route path="/pages/galerie" element={<Galerie/>}/>
+        <Route path="/admin-panel" element={<AdminPanel/>} />
+        <Route path="/admin-signup" element={<Signup/>} />
+        <Route path="/admin-login" element={<Login/>} />
       </Routes>
     </BrowserRouter>
   );
