@@ -34,12 +34,5 @@
       "promo": false
     }
   ],
-  "users": [
-    {
-      "id": "1738940592452",
-      "username": "Younes",
-      "email": "youneslassirifreelance@gmail.com",
-      "password": "Younes2003@"
-    }
-  ]
+  "users": []
 }
